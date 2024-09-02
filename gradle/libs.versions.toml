@@ -1,0 +1,39 @@
+[versions]
+paper = "1.21.1-R0.1-SNAPSHOT"
+cloud = "2.0.0"
+cloud-minecraft = "2.0.0-beta.8"
+cloud-processors = "1.0.0-rc.1"
+
+java = "21"
+kotlin = "2.0.20"
+serialization-kotlin-json = "1.7.1"
+
+pluginYml = "0.6.0"
+
+[plugins]
+pluginYml = {id = "net.minecrell.plugin-yml.paper", version.ref = "pluginYml"}
+
+[libraries]
+# Paper
+paperApi = {group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+# Cloud
+cloud-paper = {group = "org.incendo", name = "cloud-paper", version.ref = "cloud-minecraft"}
+cloud-annotations = {group = "org.incendo", name = "cloud-annotations", version.ref = "cloud"}
+cloud-kotlin-coroutines-annotations = {group = "org.incendo", name = "cloud-kotlin-coroutines-annotations", version.ref = "cloud"}
+cloud-kotlin-extensions = {group = "org.incendo", name = "cloud-kotlin-extensions", version.ref = "cloud"}
+cloud-minecraft-extras = {group = "org.incendo", name = "cloud-minecraft-extras", version.ref = "cloud-minecraft"}
+cloud-processors-requirements = {group = "org.incendo", name = "cloud-processors-requirements", version.ref = "cloud-processors" }
+cloud-processors-cooldown = {group = "org.incendo", name = "cloud-processors-cooldown", version.ref = "cloud-processors" }
+# Kotlin
+kotlinJson = {group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization-kotlin-json" }
+
+[bundles]
+cloud = [
+    "cloud-paper",
+    "cloud-annotations",
+    "cloud-kotlin-coroutines-annotations",
+    "cloud-kotlin-extensions",
+    "cloud-minecraft-extras",
+    "cloud-processors-requirements",
+    "cloud-processors-cooldown"
+]
